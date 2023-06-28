@@ -1,0 +1,53 @@
+.gx5 {
+  margin-left: 10px;
+  /* ($spacer * .25) !important; */
+  padding: $spacer 10px;
+  justify-content: space-around;
+}
+
+.col {
+  float: left;
+  width: 20%;
+  padding: 3px;
+  font-size: 90%;
+  font-size: large;
+}
+
+.search,
+.clearSearch {
+  background-color: rgb(119, 60, 246);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  margin-top: 5px;
+  width: 90%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.inputSearch {
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 5px;
+  width: 90%;
+}
+
+ul {
+  color: black;
+  font-size: 20px;
+  margin-top: 2px;
+  font-weight: 300;
+  list-style-type: disc;
+  text-align: left;
+  list-style-position: inside;
+}
+
+footer {
+  text-align: center;
+  padding-top: 100px;
+  padding-right: 10px;
+}
+
+.error {
+  text-align: center;
+}
