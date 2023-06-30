@@ -24,8 +24,8 @@
     <div class="row">
       <div class="left col-sm-3 pb-4">
         <h3 class="pt-2"><strong>Search for a city:</strong></Search></h3>
-        <input type="text" placeholder="Enter City" class="inputSearch">
-        <button class="search">Search</button>
+        <input type="text" placeholder="Enter City" class="inputSearch form-control" id="city-input">
+        <button class="search btn" id="search-btn">Search</button>
        
   
       <!-- City History -->
@@ -45,7 +45,7 @@
  
       <div class="right col-sm-8">
       <!-- Current temperature of search city -->
-        <div class="currentTemperature row ml-2 border border-dark rounded p-2">
+        <div class="currentTemperature current-temp row ml-2 border border-dark rounded p-2">
           <h3 class="city mb-3 mt-3 bolder" id="currentDay">Sydney (28/06/2023)</h3>
           <p><img src="/Assets/rain.png" class="weather-icon"></p>
           <span class="temp">Temp: 18 Deg</span>
@@ -57,7 +57,7 @@
         <div class="futureForecast col-sm-12 pt-5">
           <h3>5-Day Forecast:</h3>
           <div class="row gx-5">
-            <div class="nextOne col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
+            <div class="nextOne card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span>29/06/2023</span></p>
               <p><img src="/Assets/rain.png"></p>
               <p><span>Temp: 18 Deg</span></p>
@@ -65,7 +65,7 @@
               <p><span>Humidity: 5%</span></p>
             </div>
 
-            <div class="nextTwo col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
+            <div class="nextTwo card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span>30/06/2023</span></p>
               <p><img src="/Assets/cloudy.png"></p>
               <p><span>Temp: 19 Deg</span></p>
@@ -73,7 +73,7 @@
               <p><span>Humidity: 5%</span></p>
             </div>
 
-            <div class="nextThree col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
+            <div class="nextThree card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span>01/07/2023</span></p>
               <p><img src="/Assets/cloudy.png"></p>
               <p><span>Temp: 20 Deg</span></p>
@@ -81,7 +81,7 @@
               <p><span>Humidity: 5%</span></p>
             </div>
 
-            <div class="nextFour col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
+            <div class="nextFour card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span>02/07/2023</span></p>
               <p><img src="/Assets/rain.png"></p>
               <p><span>Temp: 21 Deg</span></p>
@@ -89,7 +89,7 @@
               <p><span>Humidity: 5%</span></p>
             </div>
 
-            <div class="nextFive col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
+            <div class="nextFive card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span>03/07/2023</span></p>
               <p><img src="/Assets/sunny.png"></p>
               <p><span>Temp: 17 Deg</span></p>

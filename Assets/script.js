@@ -27,7 +27,8 @@ document.write(today);
 
 const apiKey = "75abdcee6ea6aefd99105a234a59bd7b";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-const apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?&units=metric&appid="
+const apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=75abdcee6ea6aefd99105a234a59bd7b";
+
 // const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}";
 
 
@@ -66,3 +67,57 @@ if(data.weather[0].main == "Clouds") {
 searchBtn.addEventListener("click", ()=>{
   checkWeather(searchBox.value);
 })
+
+// Get Geo Location
+var x = document.getElementById("input");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+// console.log(position);
+// console.log(showPosition);
+
+// Apend the data to 5-Day Forecast.
+
+
+// Save to Local Storage
+
+{
+  $(".searchButton").click(function () {
+    var thisValue = $(this).siblings(".description").val();
+    console.log(thisValue);
+
+    var timeSlot = $(this).siblings(".description").attr("id");
+    console.log(timeSlot);
+    localStorage.setItem(timeSlot, thisValue);
+
+    saveTask();
+  });
+}
+
+
+// localStorage.setItem("inputSearch", );
+// document.getElementById("demo").innerHTML = localStorage.getItem("lastname");
+
+// Clear Search
+
+
+
+
+function clearHistory(event){
+  event.preventDefault();
+  sCity=[];
+  localStorage.removeItem("cityname");
+  document.location.reload();
+
+}
+
+
