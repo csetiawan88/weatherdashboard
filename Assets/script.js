@@ -12,6 +12,8 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
+var searchHistory = JSON.parse(localStorage.getItem('search-history')) || [];
+
 today = '(' + dd + '/' + mm + '/' + yyyy + ')';
 document.write(today);
 
@@ -66,7 +68,10 @@ if(data.weather[0].main == "Clouds") {
 
 searchBtn.addEventListener("click", ()=>{
   checkWeather(searchBox.value);
+  storeCity(searchBox.value);
 })
+
+
 
 // Get Geo Location
 var x = document.getElementById("input");
@@ -89,19 +94,34 @@ function showPosition(position) {
 
 
 // Save to Local Storage
-
-{
-  $(".searchButton").click(function () {
-    var thisValue = $(this).siblings(".description").val();
-    console.log(thisValue);
-
-    var timeSlot = $(this).siblings(".description").attr("id");
-    console.log(timeSlot);
-    localStorage.setItem(timeSlot, thisValue);
-
-    saveTask();
-  });
+function storeCity(city) {
+  console.log('[]',searchHistory);
+  searchHistory.push(city)
+  localStorage.setItem('search-history', JSON.stringify(searchHistory));
 }
+
+function appendCity(){
+  searchHistory.forEach((city) => {
+    localStorage.getItem('search-history', JSON.stringify(searchHistory));
+  })
+  
+}
+
+
+appendCity ()
+
+// {
+//   $(".searchButton").click(function () {
+//     var thisValue = $(this).siblings(".description").val();
+//     console.log(thisValue);
+
+//     var timeSlot = $(this).siblings(".description").attr("id");
+//     console.log(timeSlot);
+//     localStorage.setItem(timeSlot, thisValue);
+
+//     saveTask();
+//   });
+// }
 
 
 // localStorage.setItem("inputSearch", );
@@ -109,15 +129,10 @@ function showPosition(position) {
 
 // Clear Search
 
+// function clearHistory(event){
+//   event.preventDefault();
+//   sCity=[];
+//   localStorage.removeItem("cityname");
+//   document.location.reload();
 
-
-
-function clearHistory(event){
-  event.preventDefault();
-  sCity=[];
-  localStorage.removeItem("cityname");
-  document.location.reload();
-
-}
-
-
+// }
