@@ -102,11 +102,11 @@ function storeCity(city) {
 
 function appendCity(){
   searchHistory.forEach((city) => {
-    localStorage.getItem('search-history', JSON.stringify(searchHistory));
-  })
+    // localStorage.getItem('search-history', JSON.stringify(searchHistory));
+    document.getElementsByClassName('searchHistoryHtml ')[0].append(city);
+  });
   
 }
-
 
 appendCity ()
 
@@ -128,6 +128,15 @@ appendCity ()
 // document.getElementById("demo").innerHTML = localStorage.getItem("lastname");
 
 // Clear Search
+document.getElementsByClassName('clearSearch')[0].addEventListener('click', clearHistory);
+function clearHistory(event){
+  //clear localStorage with key search-history
+localStorage.removeItem("search-history");
+//clear DOM
+document.getElementsByClassName('searchHistoryHtml')[0].innerHTML = "";
+}
+
+
 
 // function clearHistory(event){
 //   event.preventDefault();
