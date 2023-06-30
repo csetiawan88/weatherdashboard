@@ -29,7 +29,10 @@ document.write(today);
 
 const apiKey = "75abdcee6ea6aefd99105a234a59bd7b";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-const apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=75abdcee6ea6aefd99105a234a59bd7b";
+
+//const apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=75abdcee6ea6aefd99105a234a59bd7b`;
+
+const apiUrl3 = "https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${weatherApiKey}";
 
 // const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}";
 
@@ -38,6 +41,41 @@ const apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon
 const searchBox = document.querySelector(".left input");
 const searchBtn = document.querySelector(".left button");
 const weatherIcon = document.querySelector(".weather-icon");
+
+//Geolocation
+function geoLoc(city){
+
+  var url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`;
+  fetch(url)
+  .then(function(res) {return res.json()})
+  .then(function(data) {getWeather(data[0])})
+  .catch(function (err) {
+    console.error(err);
+  });
+
+}
+geoLoc('sydney');
+
+function getWeather (city){
+  var lat = city.lat
+  var lon = city.lon
+  console.log(lat,lon);
+  const apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=75abdcee6ea6aefd99105a234a59bd7b`;
+  fetch(apiUrl2)
+  .then(function(res) {return res.json()})
+  .then(function(data) {console.log(data)})
+  .catch(function (err) {
+    console.error(err);
+  });
+}
+
+function geoLocation(city) {
+  fetch(apiUrl3 + `q=${search}` + `&appid=${apiKey}`).then(function(res) {return res.json()});
+  then()
+  .catch()
+}
+
+//Current date city details
 
 async function checkWeather(city){
 const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -74,19 +112,19 @@ searchBtn.addEventListener("click", ()=>{
 
 
 // Get Geo Location
-var x = document.getElementById("input");
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+// var x = document.getElementById("input");
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//   } else {
+//     x.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
+// function showPosition(position) {
+//   x.innerHTML = "Latitude: " + position.coords.latitude +
+//   "<br>Longitude: " + position.coords.longitude;
+// }
 // console.log(position);
 // console.log(showPosition);
 
