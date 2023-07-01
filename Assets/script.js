@@ -17,6 +17,7 @@ var searchHistory = JSON.parse(localStorage.getItem('search-history')) || [];
 today = '(' + dd + '/' + mm + '/' + yyyy + ')';
 document.write(today);
 
+
 // var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
 // var day = currentDate.getDate()
 // var month = currentDate.getMonth() + 1
@@ -45,27 +46,39 @@ const weatherIcon = document.querySelector(".weather-icon");
 //Geolocation
 function geoLoc(city){
 
-  var url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`;
+  var url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}&units=metric`;
   fetch(url)
   .then(function(res) {return res.json()})
   .then(function(data) {getWeather(data[0])})
   .catch(function (err) {
     console.error(err);
   });
-
 }
-geoLoc('sydney');
 
+// 5 day forecast append to index.html
 function getWeather (city){
-  var lat = city.lat
-  var lon = city.lon
-  console.log(lat,lon);
-  const apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=75abdcee6ea6aefd99105a234a59bd7b`;
+  // var lat = city.lat
+  // var lon = city.lon
+  // console.log(lat,lon);
+  const apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=75abdcee6ea6aefd99105a234a59bd7b`;
   fetch(apiUrl2)
   .then(function(res) {return res.json()})
-  .then(function(data) {console.log(data)})
+  .then(function(data) {
+    console.log(data)
+    let day = 1;
+      for (let i = 0; i < data.list.length; i+= 8) {
+        document.querySelector(`.date${day}`).innerHTML = data.list[i].dt_txt.slice(0,10);
+        document.querySelector(`.icon${day}`).src=`http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`;
+        document.querySelector(`.temp${day}`).innerHTML = "Temp: " + data.list[i].main.temp + " °C";
+        document.querySelector(`.wind${day}`).innerHTML = "Wind: " + data.list[i].wind.speed + " km/h";
+        document.querySelector(`.humidity${day}`).innerHTML = "Humidity: " + data.list[i].main.humidity + "%";
+        day++;
+      }
+ 
+  })
   .catch(function (err) {
     console.error(err);
+    
   });
 }
 
@@ -74,10 +87,13 @@ function geoLocation(city) {
   then()
   .catch()
 }
+//Apend the data to index.html
+
 
 //Current date city details
 
 async function checkWeather(city){
+  getWeather(city);
 const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 var data = await response.json();
 
@@ -88,18 +104,19 @@ document.querySelector(".city").innerHTML = data.name + ' ' + today;
 document.querySelector(".temp").innerHTML = "Temp: " + data.main.temp + " °C";
 document.querySelector(".wind").innerHTML = "Wind: " + data.wind.speed + " km/h";
 document.querySelector(".humidity").innerHTML = "Humidity: " + data.main.humidity + "%";
+weatherIcon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
+// if(data.weather[0].main == "Clouds") {
+//   weatherIcon.src = "Assets/clouds.png";
+// } else  if (data.weather[0].main == "Clear"){
+//   weatherIcon.src = "Assets/clear.png";
+// } else  if (data.weather[0].main == "Rain"){
+//   weatherIcon.src = "Assets/rain.png";
+// } else  if (data.weather[0].main == "Drizzle"){
+//   weatherIcon.src = "Assets/drizzle.png";
+// } else  if (data.weather[0].main == "Mist"){
+//   weatherIcon.src = "Assets/mist.png";
+// }
 
-if(data.weather[0].main == "Clouds") {
-  weatherIcon.src = "Assets/clouds.png";
-} else  if (data.weather[0].main == "Clear"){
-  weatherIcon.src = "Assets/clear.png";
-} else  if (data.weather[0].main == "Rain"){
-  weatherIcon.src = "Assets/rain.png";
-} else  if (data.weather[0].main == "Drizzle"){
-  weatherIcon.src = "Assets/drizzle.png";
-} else  if (data.weather[0].main == "Mist"){
-  weatherIcon.src = "Assets/mist.png";
-}
 }
 
 
@@ -174,12 +191,22 @@ localStorage.removeItem("search-history");
 document.getElementsByClassName('searchHistoryHtml')[0].innerHTML = "";
 }
 
+// Search history function
+function display() {
+  const city = JSON.parse(localStorage.getItem("search-history"))||[];
+  console.log(city);
+  //create for loop
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+  
+  // create button to append to that city  
 
+  }
+}
+display();
 
 // function clearHistory(event){
 //   event.preventDefault();
 //   sCity=[];
 //   localStorage.removeItem("cityname");
 //   document.location.reload();
-
-// }
