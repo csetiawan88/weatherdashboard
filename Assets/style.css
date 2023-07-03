@@ -1,9 +1,4 @@
-.gx5 {
-  margin-left: 10px;
-  /* ($spacer * .25) !important; */
-  padding: $spacer 10px;
-  justify-content: space-around;
-}
+
 
 .col {
   float: left;
@@ -15,7 +10,7 @@
 
 .search,
 .clearSearch {
-  background-color: rgb(119, 60, 246);
+  background-color: rgb(6, 246, 50);
   color: white;
   border: none;
   border-radius: 3px;

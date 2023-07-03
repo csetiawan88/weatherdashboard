@@ -66,7 +66,7 @@ function getWeather (city){
   .then(function(data) {
     console.log(data)
     let day = 1;
-      for (let i = 0; i < data.list.length; i+= 8) {
+      for (let i = 6; i < data.list.length; i+= 8) {
         document.querySelector(`.date${day}`).innerHTML = data.list[i].dt_txt.slice(0,10);
         document.querySelector(`.icon${day}`).src=`http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`;
         document.querySelector(`.temp${day}`).innerHTML = "Temp: " + data.list[i].main.temp + " °C";
@@ -191,19 +191,32 @@ localStorage.removeItem("search-history");
 document.getElementsByClassName('searchHistoryHtml')[0].innerHTML = "";
 }
 
+//To achieve the desired functionality there are a few changes you need to make to your existing code.
+//1. In your storeCity function, you're pushing the city to the searchHistory array and storing it in local storage. However, you're not updating the search history column in the HTML. Modify the appendCity function to update the search history column.
+//2. In your searchBtn event listener, after calling the checkWeather function, you should also call the storeCity function to add the searched city to the search history.
+//3. In your checkWeather function, you're currently calling the getWeather function to retrieve the 5-day forecast for the city. However, you're not passing the correct parameters to the getWeather function.
+//With these changes, when you search for a city, it will be added to the search history column. When you click on a city in the search history, the weather forecast for that city will be displayed. (edited) 
+
+// if local storage is not null, then get the final element of array
+// else.....
+// 
+
+
 // Search history function
 function display() {
   const city = JSON.parse(localStorage.getItem("search-history"))||[];
   console.log(city);
   //create for loop
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
+  for (let index = 0; index < city.length; index++) {
+    const element = city[index];
   
   // create button to append to that city  
 
   }
 }
 display();
+
+
 
 // function clearHistory(event){
 //   event.preventDefault();
