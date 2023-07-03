@@ -25,14 +25,17 @@ URL:
 GITHUB: https://github.com/csetiawan88/weatherdashboard
 
 ## Screen shot:
-![Weather Dashboard](./Assets/Screenshot.jpg)
+![Weather Dashboard](./Assets/Screenshots.jpg)
+![Weather Dashboard](./Assets/Screenshots1.jpg)
 
 
-
-
-
-## Weather Icon
+## Weather Icon source
 https://icons8.com/icon/set/weather/fluency
+ & 
+http://openweathermap.org
+
+
+
 
 # 06 Server-Side APIs: Weather Dashboard
 

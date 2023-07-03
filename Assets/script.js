@@ -14,7 +14,7 @@ var yyyy = today.getFullYear();
 
 var searchHistory = JSON.parse(localStorage.getItem('search-history')) || [];
 
-today = '(' + dd + '/' + mm + '/' + yyyy + ')';
+today = '(' + yyyy+ '-' + mm + '-' + dd + ')';
 document.write(today);
 
 
