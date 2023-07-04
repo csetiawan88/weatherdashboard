@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Dashboard</title>
 
- 
+  <!-- Bootstrap  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="/Assets/style.css">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="/assets/style.css">
+
 </head>
+
 <body>
 
   <!-- Title -->
@@ -18,7 +22,6 @@
     <h1>Weather Dashboard</h1>
   </div>
 
- 
   <div class="container-fluid pt-4 pl-10">
      <!-- Search for a city box -->
     <div class="row">
@@ -26,9 +29,8 @@
         <h3 class="pt-2"><strong>Search for a city:</strong></Search></h3>
         <input type="text" placeholder="Enter City" class="inputSearch form-control" id="city-input">
         <button class="search btn" id="search-btn">Search</button>
-       
   
-      <!-- City History -->
+        <!-- City History display -->
         <ul id="element-id" class="searchHistoryHtml mb-3 pt-4">
           <!-- <p class="city1">Sydney</p>
           <p class="city2">Melbourne</p>
@@ -36,30 +38,28 @@
           <p class="city4">New York</p>
           <p class="city5">Shanghai</p> -->
         </ul>
+
+        <!-- Clear Search Button -->
         <button class="clearSearch">Clear Search</button>
       </div>
-
-      <!-- <div class="error">
-        <p>Invalid city name</p>
-      </div> -->
  
       <div class="right col-sm-8">
       <!-- Current temperature of search city -->
         <div class="currentTemperature current-temp row ml-2 border border-dark rounded p-2">
           <h3 class="city mb-3 mt-3 bolder" id="currentDay">(______) (______)</h3>
-          <p><img src="/Assets/snow.png" class="weather-icon"></p>
+          <p><img src="/assets/snow.png" class="weather-icon"></p>
           <span class="temp">Temp: (______) °C</span>
           <span class="wind">Wind: (______) km/h</span>
           <span class="humidity">Humidity: (______)%</span>
         </div>
 
-      <!-- Future temperature of search city -->
+      <!-- 5 day forecast of search city -->
         <div class="futureForecast col-sm-12 pt-5">
           <h3>5-Day Forecast:</h3>
           <div class="row gx-5">
             <div class="nextOne card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span class="date1">(______)</span></p>
-              <p><img class="icon1" src="/Assets/snow.png"></p>
+              <p><img class="icon1" src="/assets/snow.png"></p>
               <p><span class="temp1">Temp: (______) °C</span></p>
               <p><span class="wind1">Wind: (______) km/h</span></p>
               <p><span class="humidity1">Humidity: (______)%</span></p>
@@ -67,7 +67,7 @@
 
             <div class="nextOne card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span class="date2">(______)</span></p>
-              <p><img class="icon2" src="/Assets/mist.png"></p>
+              <p><img class="icon2" src="/assets/mist.png"></p>
               <p><span class="temp2">Temp: (______) °C</span></p>
               <p><span class="wind2">Wind: (______) km/h</span></p>
               <p><span class="humidity2">Humidity: (______)%</span></p>
@@ -75,7 +75,7 @@
 
             <div class="nextOne card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span class="date3">(______)</span></p>
-              <p><img class="icon3" src="/Assets/drizzle.png"></p>
+              <p><img class="icon3" src="/assets/drizzle.png"></p>
               <p><span class="temp3">Temp: (______) °C</span></p>
               <p><span class="wind3">Wind: (______) km/h</span></p>
               <p><span class="humidity3">Humidity: (______)%</span></p>
@@ -83,7 +83,7 @@
 
             <div class="nextOne card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span class="date4">(______)</span></p>
-              <p><img class="icon4" src="/Assets/cloudy.png"></p>
+              <p><img class="icon4" src="/assets/cloudy.png"></p>
               <p><span class="temp4">Temp: (______) °C</span></p>
               <p><span class="wind4">Wind: (______) km/h</span></p>
               <p><span class="humidity4">Humidity: (______)%</span></p>
@@ -92,32 +92,29 @@
 
             <div class="nextOne card col text-dark col-sm-3 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2">
               <p><span class="date5">(______)</span></p>
-              <p><img class="icon5" src="/Assets/clear.png"></p>
+              <p><img class="icon5" src="/assets/clear.png"></p>
               <p><span class="temp5">Temp: (______) °C</span></p>
               <p><span class="wind5">Wind: (______) km/h</span></p>
               <p><span class="humidity5">Humidity: (______)%</span></p>
             </div>
-
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
 
+  <!-- Footer -->
   <footer>Design and Develop by csetiawan88</footer>
 
   <!-- Javascript Link -->
-  
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"
-  ></script>
-  <script src="/Assets/script.js"></script>
+    crossorigin="anonymous"></script>
+
+  <script src="/assets/script.js"></script>
 
 </body>
+
 </html>
