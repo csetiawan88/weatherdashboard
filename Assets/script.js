@@ -66,7 +66,7 @@ function getWeather (city){
   .then(function(data) {
     console.log(data)
     let day = 1;
-      for (let i = 8; i < data.list.length; i+= 8) {
+      for (let i = 7; i < data.list.length; i+= 8) {
         document.querySelector(`.date${day}`).innerHTML = data.list[i].dt_txt.slice(0,10);
         document.querySelector(`.icon${day}`).src=`http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`;
         document.querySelector(`.temp${day}`).innerHTML = "Temp: " + data.list[i].main.temp + " °C";
@@ -201,6 +201,9 @@ document.getElementsByClassName('searchHistoryHtml')[0].innerHTML = "";
 // else.....
 // 
 
+//Okay, essentially you'll create button element. Set the textContent of the element to the city name. and then add an event listener to call the getLoc function and pass the city name to the getLoc function. Then you'll append that element to the search history element
+
+// I'd probably change const element variable name to const cityName or something more specific (line 211
 
 // Search history function
 function display() {
@@ -208,12 +211,23 @@ function display() {
   console.log(city);
   //create for loop
   for (let index = 0; index < city.length; index++) {
-    const element = city[index];
+    const cityName = city[index];
+  // create button to append to that city
+  const createButton= document.createElement('button')
+  createButton.innerText= 'search-history'
+  document.body.appendChild(city);
+  // create button element
+  // set button element textContent to city
+  // add event listner to the button element
+  button.addEventListener("click", ()=>{
+  checkWeather(searchBox.value)
+  })
+  // append button element to search history element (you may have to getElementById for search history if you don't have it as a global variable first)
+  }
   
-  // create button to append to that city  
 
   }
-}
+
 display();
 
 
