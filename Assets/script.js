@@ -214,8 +214,9 @@ function display() {
     const cityName = city[index];
   // create button to append to that city
   const createButton= document.createElement('button')
-  createButton.innerText= 'search-history'
+  createButton.innerText= cityName;
   document.body.appendChild(city);
+  document.querySelectore(".searchHistoryHtml").appendChild(createButton);
   // create button element
   // set button element textContent to city
   // add event listner to the button element
