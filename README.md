@@ -1,41 +1,41 @@
 # Module 6 challenge: 06 Server-Side APIs: Weather Dashboard
 
 ## Criteria
-1) When search for a city, then presented with current and future conditions for that city and that city is added to the search history
-2) When view current weather conditions for that city then presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-3) When view future weather conditions for that city then presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-4) When click on a city in the search history then again presented with current and future conditions for that city
-5) Clear history button added
-6) Uses the OpenWeather API to retrieve weather data.
-7) Uses `localStorage` to store persistent data.
+
+1. When search for a city, then presented with current and future conditions for that city and that city is added to the search history
+2. When view current weather conditions for that city then presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
+3. When view future weather conditions for that city then presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+4. When click on a city in the search history then again presented with current and future conditions for that city
+5. Clear history button added
+6. Uses the OpenWeather API to retrieve weather data.
+7. Uses `localStorage` to store persistent data.
 
 ## Completed:
-1) I have completed search for a city, then presented with current and future conditions for that city and that city is added to the search history
-2) I have completed view current weather conditions for that city then presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-3) I have completed view future weather conditions for that city then presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-4) I have completed click on a city in the search history then again presented with current and future conditions for that city
-5) I have added function in clear history button that clear city search saved on local storage.
-6) I have used the OpenWeather API to retrieve weather data.
-7) I have used `localStorage` to store persistent data.
+
+1. I have completed search for a city, then presented with current and future conditions for that city and that city is added to the search history
+2. I have completed view current weather conditions for that city then presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
+3. I have completed view future weather conditions for that city then presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+4. I have completed click on a city in the search history then again presented with current and future conditions for that city
+5. I have added function in clear history button that clear city search saved on local storage.
+6. I have used the OpenWeather API to retrieve weather data.
+7. I have used `localStorage` to store persistent data.
 
 ## Deployment
-URL: 
 
-       
+URL:
+
 GITHUB: https://github.com/csetiawan88/weatherdashboard
 
 ## Screen shot:
-![Weather Dashboard](./assets/Screenshots.jpg)
-![Weather Dashboard](./assets/Screenshots1.jpg)
 
+![Weather Dashboard](./Assets/Screenshots.jpg)
+![Weather Dashboard](./Assets/Screenshots1.jpg)
 
 ## Weather Icon source
+
 https://icons8.com/icon/set/weather/fluency
- & 
+&
 http://openweathermap.org
-
-
-
 
 # 06 Server-Side APIs: Weather Dashboard
 
@@ -81,61 +81,62 @@ The following image shows the web application's appearance and functionality:
 
 > **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
 >
-> * A repository that has no code
+> - A repository that has no code
 >
-> * A repository that includes a unique name but nothing else
+> - A repository that includes a unique name but nothing else
 >
-> * A repository that includes only a README file but nothing else
+> - A repository that includes only a README file but nothing else
 >
-> * A repository that only includes starter code
+> - A repository that only includes starter code
 
-This Challenge is graded based on the following criteria: 
+This Challenge is graded based on the following criteria:
 
 ### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the above acceptance criteria plus the following:
+- Satisfies all of the above acceptance criteria plus the following:
 
-    * Uses the OpenWeather API to retrieve weather data.
+  - Uses the OpenWeather API to retrieve weather data.
 
-    * Uses `localStorage` to store persistent data.
+  - Uses `localStorage` to store persistent data.
 
 ### Deployment: 32%
 
-* Application deployed at live URL.
+- Application deployed at live URL.
 
-* Application loads with no errors.
+- Application loads with no errors.
 
-* Application GitHub URL submitted.
+- Application GitHub URL submitted.
 
-* GitHub repository that contains application code.
+- GitHub repository that contains application code.
 
 ### Application Quality: 15%
 
-* Application user experience is intuitive and easy to navigate.
+- Application user experience is intuitive and easy to navigate.
 
-* Application user interface style is clean and polished.
+- Application user interface style is clean and polished.
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+- Application resembles the mock-up functionality provided in the Challenge instructions.
 
 ### Repository Quality: 13%
 
-* Repository has a unique name.
+- Repository has a unique name.
 
-* Repository follows best practices for file structure and naming conventions.
+- Repository follows best practices for file structure and naming conventions.
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+- Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
 
-* Repository contains multiple descriptive commit messages.
+- Repository contains multiple descriptive commit messages.
 
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
+- Repository contains quality readme file with description, screenshot, and link to deployed application.
 
 ## Review
 
 You are required to submit BOTH of the following for review:
 
-* The URL of the functional, deployed application.
+- The URL of the functional, deployed application.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
+- The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
 
-- - -
+---
+
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
