@@ -22,7 +22,7 @@
 
 ## Deployment
 
-URL:
+URL: https://csetiawan88.github.io/weatherdashboard/
 &
 GITHUB: https://github.com/csetiawan88/weatherdashboard
 
