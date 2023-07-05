@@ -28,8 +28,8 @@ GITHUB: https://github.com/csetiawan88/weatherdashboard
 
 ## Screen shot:
 
-![Weather Dashboard](/Assets/screenshot1.jpg)
-![Weather Dashboard](/Assets/screenshot2.jpg)
+![Weather Dashboard](screenshot1.jpg)
+![Weather Dashboard](screenshot2.jpg)
 
 ## Weather Icon source
 
